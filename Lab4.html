@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title> INST377: Lab 4 </title>
+    <link rel="stylesheet" href="lab4style.css">
+</head>
+
+    <body> 
+        <h1 id="heading">
+            ⋆˚✿˖°INST377 Lab 4 ⋆˚✿˖°
+        </h1>
+
+    
+    <!-- Main text Area -->
+    <div class="main-container">
+        <div class="content-area1">
+
+                    <div id="name">
+                        <form name="NameForm" onsubmit="return formName(event)">
+                            <label for="fname">Name:</label>
+                            <input type="text" id="fname" required>
+                            <input type="submit" class="submit" value="Alert Me!">
+                        </form>
+                    </div>
+
+                    <div id="texttester">
+                        <form name="ValidationForm" onsubmit="return formValidation(event)">
+                            <label for="validation">Text Tester:</label>
+                            <input type="text" id="Validation" required>
+                            <input type="submit" class="submit" value="Validate Text">
+                        </form>
+                    </div>
+
+        </div>
+
+        <div class="content-area2">
+                    <div id="color">
+                    <button onclick="changeColor()"> Change Color </button>
+                    </div>
+                
+                    <div id="add" onclick="addText()">
+                    <button> Add Text </button>
+                    </div>
+        </div>
+    </div>
+</body>
+</html>
+
+
+    <!-- Javascript Code -->
+    <script type="text/javascript">
+        function changeColor() {
+            let bodyElement = document.body; 
+            console.log('Attempting to change page background color, current color is:', bodyElement.style.backgroundColor);
+    
+            if (bodyElement.style.backgroundColor === 'white') {
+                bodyElement.style.backgroundColor = 'lightblue'; 
+            } else {
+                bodyElement.style.backgroundColor = 'white'; 
+            }
+            console.log('Successfully changed page background color, new color is:', bodyElement.style.backgroundColor);
+        }
+
+        function formName(event) {
+            let name = document.getElementById("fname").value; 
+            alert("Hi " + name + "!");
+            return false; 
+    }
+
+        function formValidation(event) {
+            let userInput = document.getElementById("Validation").value;
+            console.log('Validating user input:', userInput);  
+
+            const validationRegex = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/; 
+
+            if (validationRegex.test(userInput)) {
+                console.log('Special character detected');
+                alert('How about..... nah :(');  
+                return false; 
+            }
+            console.log('No special characters detected');
+            alert('No special characters, valid input!'); 
+            return true;  
+        }
+
+        function addText() {
+            let heading = document.getElementById("heading");
+            heading.textContent += " - Adding Text";  
+        }
+    </script>
+
+    
