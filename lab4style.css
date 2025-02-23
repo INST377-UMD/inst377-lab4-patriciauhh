@@ -1,0 +1,31 @@
+
+        body{
+        background-color: lightblue;
+        }
+
+        .content-area1 {
+            width: 50%;
+            float: left;
+        }
+        .content-area2 {
+            width: 50%;
+            float: right; 
+        }
+
+        #name, #texttester, #color, #add {
+            background-color: rgb(196, 187, 245);
+            color: black;
+            border: 2px solid black;
+            padding: 10px;
+            border-radius: 15px;
+            margin: 5px;
+            text-align: center;
+        }
+
+        .main-container {
+        width: 100%;
+        height: 100%;
+        margin-bottom: 350px;
+        }
+
+       
